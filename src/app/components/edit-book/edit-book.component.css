@@ -1,0 +1,47 @@
+.editBook-container{
+    max-width: 100%;
+}
+.editBook-container form{
+    display: flex;
+    flex-direction: column;
+}
+.editBook-container .inner-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items:center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.inner-container .form-group{
+    display: flex;
+    flex-direction: column;
+}
+.content-container{
+    margin-left: 25px;
+}
+.editBook-container .header{
+    align-self: center;
+} 
+.editBook-container .footer{
+    align-self: center;
+    margin-bottom: 5px;
+} 
+.editBook-container .footer button{
+    margin-right: 5px;
+} 
+.mat-toolbar-single-row {
+    height: auto !important;
+    background: transparent;
+    padding: 0;
+}
+.mat-input-element {
+    font-size:small;
+    font-weight: 200;
+}
+.mat-toolbar-single-row button {
+    width: 100px;
+}
+.mat-form-field-wrapper{
+    padding: 0;
+}

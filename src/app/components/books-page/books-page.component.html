@@ -1,0 +1,80 @@
+<div class="book-page-container">
+    <div class="book-creating-container">
+        <form [formGroup]="bookCreatingForm" (ngSubmit)="submitBookCreating()">
+    
+            <div class="header">
+                <p>Add Book</p>
+            </div>
+    
+            <div class="inner-container">
+                <div class="form-group">
+    
+                    <mat-form-field>
+                        <mat-label>Title</mat-label>
+                        <input formControlName="title" matInput placeholder="Title">
+                    </mat-form-field>
+    
+                    <mat-form-field>
+                        <mat-toolbar>
+                            <input disabled [value]="selectedFile" matInput required="true" placeholder="Cover">
+                      
+                            <button
+                              mat-flat-button
+                              color="primary"
+                              (click)="inputFile.click()"
+                            >Choose</button>
+                            
+                          </mat-toolbar>
+                          <input
+                            type="file"
+                            id="fileInput"
+                            name="fileInput"
+                            accept="image/*"
+                            formControlName = "cover"
+                            hidden
+                            #inputFile
+                            (change)="uploadFile($event)"
+                            />
+                            <mat-hint *ngIf="bookCreatingForm.controls['cover'].invalid"><span style="color: red;">Wrong file type</span></mat-hint>
+                        </mat-form-field>
+    
+                    <mat-form-field>
+                        <mat-label>Genre</mat-label>
+                        <input formControlName="genre" matInput placeholder="Genre">
+                    </mat-form-field>
+    
+                    <mat-form-field>
+                        <mat-label>Author</mat-label>
+                        <input formControlName="author" matInput placeholder="Author">
+                    </mat-form-field>
+                </div>
+           
+                <div class="form-group">
+                    <mat-form-field>
+                        <mat-label>Content</mat-label>
+                        <textarea formControlName="content" style="resize: none;" matInput rows="15" cols="40"></textarea>
+                    </mat-form-field>
+                    
+                </div>
+            </div>
+    
+            <div class="footer">
+                <button
+                mat-flat-button
+                type="submit"
+                color="primary"
+                [disabled]="!bookCreatingForm.valid"
+              >Add</button>
+    
+              <button
+                mat-flat-button
+                color="warn"
+                (click)="clearForm()"
+              >Clear</button>
+            </div>
+        </form>
+    </div>
+   
+    <app-book-list></app-book-list>
+
+</div> 

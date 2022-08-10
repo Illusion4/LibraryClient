@@ -1,0 +1,27 @@
+.grid-container{
+    max-width:80%;
+    margin: 0 auto;
+    border: 2px solid rgb(244,247,253);
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    max-width: 90%;
+    grid-auto-rows: 1fr;
+    gap:10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+mat-form-field{
+    margin-top: 10px;
+    align-self: flex-start;
+    margin-left:70px;
+}

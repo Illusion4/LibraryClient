@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;900&display=swap');
+
+.card-wrapper{
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: flex-start;
+    box-shadow: none;
+    border: 2px solid rgb(244,247,253);
+}
+
+.image-wrapper{
+    overflow: hidden;
+    max-width: 62px;
+    height: 75px;
+    border-radius: 5px;
+    align-self: center;
+    min-width: 60px;
+}
+.image-wrapper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.right-side-content{
+    margin-left: 20px;
+    flex-grow: 1;
+}
+
+.footer{
+    display: flex;
+    font-family: 'Kanit', sans-serif;
+}
+.header{
+    display: flex;
+    align-self: center;
+    width:100%;
+}
+.header .buttons{
+    margin-left: auto;
+    display: flex;
+    color: rgb(150,163,196);
+}
+.buttons .view-button{
+    cursor: pointer;
+}
+.buttons .edit-button{
+    cursor: pointer;
+}

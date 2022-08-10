@@ -1,0 +1,15 @@
+<div class="grid-container">
+    <mat-form-field appearance="legacy">
+        <mat-label>Select an option</mat-label>
+        <mat-select [(value)]="selected" (selectionChange)="onSelectionChange()">
+          <mat-option value="All">All Books</mat-option>
+          <mat-option value="Recommended">Recommended</mat-option>
+        </mat-select>
+      </mat-form-field>
+    <div class="grid" *ngIf="bookService.books | async; else loading">
+        <app-book-list-item *ngFor="let book of bookService.books | async" [book]="book"></app-book-list-item>
+    </div>
+    <ng-template #loading>
+        <mat-spinner></mat-spinner>
+    </ng-template>
+</div>

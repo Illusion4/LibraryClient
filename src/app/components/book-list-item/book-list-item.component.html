@@ -1,0 +1,22 @@
+<mat-card class="card-wrapper">
+    <div class="image-wrapper">
+        <img [src]="book?.cover">
+    </div>
+    <div class="right-side-content">
+        <div class="header">
+            <p>{{book?.title}}</p>
+            <div class="buttons">
+                <div class="view-button">
+                    <i style="padding: 16px;" (click)="openViewDialog()" class="fa fa-eye" aria-hidden="true"></i>
+                </div>
+                <div class ="edit-button">
+                    <i style="padding: 16px;" class="fas fa-edit" (click)="openEditDialog()"></i>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <p style="color: rgb(150,163,196);">Rating: {{book?.rating}}</p>
+            <p style="margin-left: 20px;color: rgb(150,163,196);">Review: {{book?.reviewsNumber}}</p>
+        </div>
+    </div>
+</mat-card>

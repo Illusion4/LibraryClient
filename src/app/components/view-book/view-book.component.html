@@ -1,0 +1,29 @@
+<div class="book-details-container">
+    <div class="header">
+
+    </div>
+    <div class="details-body">
+        <div class="left-side">
+            <div class="cover-container">
+                <img [src]="(bookDetails | async)?.cover">
+            </div>
+            <div class="left-side-footer">
+                <p >Rating: {{(bookDetails | async)?.rating}}</p>
+                <p style="margin-left: 20px;">Reviews: {{(bookDetails | async)?.reviews!.length}}</p>
+            </div>
+        </div>
+        <div class="right-side">
+            
+            <mat-form-field>
+                <textarea style="resize: none;" matInput rows="15" readonly cols="100" [value]="(bookDetails | async)?.content"></textarea>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="reviews">
+        <div class="review" *ngFor="let review of (bookDetails | async)?.reviews">
+            <mat-divider></mat-divider>
+            <p>{{review.reviewer}}</p>
+            <p>{{review.message}}</p>
+        </div>
+    </div>
+</div>
